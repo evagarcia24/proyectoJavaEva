@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -84,7 +85,7 @@ public class Curso implements Serializable {
 	@Column(name = "fecha_creacion", nullable = false)
 	private LocalDateTime fechaCreacion; // obligatorio, set en PrePersist
 
-	@OneToMany(mappedBy = "curso", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "curso", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Alumno> alumnos = new ArrayList<>();
 
 	@ManyToOne(fetch = FetchType.LAZY)

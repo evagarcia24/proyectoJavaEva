@@ -26,7 +26,7 @@ public class Alumno {
 	private String email;
 
 	@Column(name = "EDAD", nullable = false)
-	private int edad;
+	private Integer edad;
 	
 	// Relación ManyToOne con Curso
 	@ManyToOne(fetch = FetchType.LAZY)
