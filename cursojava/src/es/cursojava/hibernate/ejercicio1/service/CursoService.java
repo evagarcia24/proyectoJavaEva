@@ -19,9 +19,9 @@ public class CursoService {
 		// Insertar curso
 		CursoDAOImpl cursoDAO = new CursoDAOImpl();
 
-		Curso curso = new Curso(cursoDto.getCodigo(), cursoDto.getNombre(), cursoDto.getDescripcion(),
+		Curso curso = new Curso(cursoDTO.getCodigo(), cursoDTO.getNombre(), cursoDTO.getDescripcion(),
 				cursoDTO.getHorasTotales(), cursoDTO.getActivo(), cursoDTO.getNivel(), cursoDTO.getCategoria(),
-				cursoDTO.getPrecio(), cursoDTO.getFechaInicio(), cursoDTO.getFechaFin());
+				cursoDTO.getPrecio(), cursoDTO.getFechaInicio(), cursoDTO.getFechaFin(), null, null);
 
 		cursoDAO.guardarCurso(curso);
 		cursoDAO.commitTransaction();

@@ -23,16 +23,25 @@ public class EjercicioHQL {
 		//insertarCursos();
 //		listarCursos();
 //		obtenerCursoPorId();
-		obtenerCursoPorCodigo("COD001");
+//		obtenerCursoPorCodigo("COD001");
 		
 	}
 	
-	public static Curso obtenerCursoPorCodigo(String codigo) {
-		Query<Curso> query = session.createQuery("from Curso where codigo = :codigoParam", Curso.class);
-		query.setParameter("codigoParam", codigo);
-
-		return query.uniqueResult();
-	}
+//	public static Curso obtenerCursoPorCodigo(String codigo) {
+//		CursoDAOImpl dao = new CursoDAOImpl();
+//		String hql = "FROM Curso WHERE codigo = :codigoParam";
+//		Query<Curso> query = dao.getSession().createQuery(hql, Curso.class);
+//		query.setParameter("codigoParam", codigo);
+//		Curso curso = query.uniqueResult();
+//		dao.commitTransaction();
+//		if (curso != null) {
+//			System.out.println("Curso encontrado: " + curso.getCodigo() + " - " + curso.getNombre());
+//		} else {
+//			System.out.println("No se ha encontrado ningun curso con codigo " + codigo);
+//		}
+//		return curso;
+//	}
+//	}
 
 	private static void mostrarCursosActivos () {
 		CursoDAOImpl dao = new CursoDAOImpl();
@@ -77,7 +86,7 @@ public class EjercicioHQL {
 				Curso curso = new Curso(codigo, nombre, descripcion, 
 						horasTotales,
 						activo, nivel, categoria, precio, 
-						fechaInicio, fechaFinal);
+						fechaInicio, fechaFinal, null, null);
 				
 				cursos.add(curso);
 				

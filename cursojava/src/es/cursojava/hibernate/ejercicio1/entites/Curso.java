@@ -50,7 +50,7 @@ public class Curso implements Serializable {
     @NotNull
     @DecimalMin(value = "0.0", inclusive = false)
     @Column(name = "horas_totales", nullable = false)
-    private BigDecimal horasTotales; // debe ser >0. Ej: 0.1, 1, 2.5
+    private Integer horasTotales; // debe ser >0. Ej: 0.1, 1, 2.5
 
     @NotNull
     @Column(name = "activo", nullable = false)
@@ -81,7 +81,7 @@ public class Curso implements Serializable {
 	private Aula aula;
 
     // Constructors
-    public Curso() {
+    public Curso(String string, String string2, String string3, Integer integer, Boolean boolean1, String string4, String string5, BigDecimal bigDecimal, LocalDate localDate, LocalDate localDate2, Object object, Object object2) {
         // JPA
     }
 

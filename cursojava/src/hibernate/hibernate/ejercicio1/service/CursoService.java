@@ -23,7 +23,7 @@ public class CursoService {
 		Curso curso = new Curso(cursoDTO.getCodigo(), cursoDTO.getNombre(), cursoDTO.getDescripcion(),
 				cursoDTO.getHorasTotales(), cursoDTO.getActivo(), cursoDTO.getNivel(),
 				cursoDTO.getCategoria(), cursoDTO.getPrecio(), cursoDTO.getFechaInicio(),
-				cursoDTO.getFechaFin());
+				cursoDTO.getFechaFin(), null, null);
 		
 		cursoDAO.guardarCurso(curso);
 		cursoDAO.commitTransaction();

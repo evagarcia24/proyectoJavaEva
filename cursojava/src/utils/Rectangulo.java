@@ -13,19 +13,19 @@ public class Rectangulo {
 	
 	public static void main(String[] args) {
 		
-		Scanner scan = new Scanner(System.in);
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.print("Introduce la base del rectángulo: ");
+			double base = scan.nextDouble();
 
-		System.out.print("Introduce la base del rectángulo: ");
-		double base = scan.nextDouble();
+			System.out.print("Introduce la altura del rectángulo: ");
+			double altura = scan.nextDouble();
 
-		System.out.print("Introduce la altura del rectángulo: ");
-		double altura = scan.nextDouble();
+			double[] resultados = calcularRectangulo(base, altura);
 
-		double[] resultados = calcularRectangulo(base, altura);
-
-		System.out.println("Área del rectángulo: " + resultados[0]);
-		System.out.println("Perímetro del rectángulo: " + resultados[1]);
-		System.out.println("Diagonal del rectángulo: " + resultados[2]);
+			System.out.println("Área del rectángulo: " + resultados[0]);
+			System.out.println("Perímetro del rectángulo: " + resultados[1]);
+			System.out.println("Diagonal del rectángulo: " + resultados[2]);
+		}
 	}
 
 	public static double[] calcularRectangulo(double base, double altura) {

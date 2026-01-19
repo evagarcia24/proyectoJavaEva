@@ -85,7 +85,7 @@ public class Ejercicio1Hibernate {
 				Curso curso = new Curso(codigo, nombre, descripcion, 
 						horasTotales,
 						activo, nivel, categoria, precio, 
-						fechaInicio, fechaFinal);
+						fechaInicio, fechaFinal, null, null);
 				
 				cursos.add(curso);
 				

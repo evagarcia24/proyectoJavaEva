@@ -10,23 +10,22 @@ import java.util.Scanner;
 public class TenistasFor {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Introduce número de tenistas: ");
-		int cantidad = scan.nextInt();
-		
-		int contador=0;
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.println("Introduce número de tenistas: ");
+			int cantidad = scan.nextInt();
 
-		
-		for(int i=0; i<cantidad ; i++) {
-			System.out.println("Introduce el puesto de la ATP del tenista "+ (i+1));
-			int puesto = scan.nextInt();
-			if(puesto <=10) {
-				contador++;
+			int contador = 0;
+
+			for (int i = 0; i < cantidad; i++) {
+				System.out.println("Introduce el puesto de la ATP del tenista " + (i + 1));
+				int puesto = scan.nextInt();
+				if (puesto <= 10) {
+					contador++;
+				}
 			}
+			System.out
+					.println("De los " + cantidad + " tenistas introducidos, " + contador + " están entre los 10 primeros");
 		}
-		System.out.println("De los "+cantidad+" tenistas introducidos, "+contador+ " están entre los 10 primeros");
 	}
 
-
 }
-

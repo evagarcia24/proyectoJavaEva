@@ -3,7 +3,7 @@ package controlUsuarios;
 import java.util.Date;
 import java.util.List;
 
-import es.juego.dominio.criatura.Criatura;
+//import es.juego.dominio.criatura.Criatura;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -34,9 +34,9 @@ public class Usuario {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "ROL", nullable = false)
-    private RolUsuario rol;
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "ROL", nullable = false)
+//    private RolUsuario rol;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "FECHA_ALTA", nullable = false)
@@ -50,8 +50,8 @@ public class Usuario {
     private String imagenPerfil;
 
     
-    @OneToMany(mappedBy = "usuario")
-    private List<Criatura> criaturas;
+//    @OneToMany(mappedBy = "usuario")
+//    private List<Criatura> criaturas;
 
     
     // Constructor sobrecargado
@@ -60,14 +60,14 @@ public class Usuario {
 	}
     
     // No se incluye en el constructor el id ni la fecha de alta, ya que se generan automaticamente
-    public Usuario(String username, String email, String password, RolUsuario rol, boolean activo, String imagenPerfil) {
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.rol = rol;
-		this.activo = activo;
-		this.imagenPerfil = imagenPerfil;
-	}
+//    public Usuario(String username, String email, String password, RolUsuario rol, boolean activo, String imagenPerfil) {
+//		this.username = username;
+//		this.email = email;
+//		this.password = password;
+//		this.rol = rol;
+//		this.activo = activo;
+//		this.imagenPerfil = imagenPerfil;
+//	}
            
     
 	// Getters y Setters
@@ -103,13 +103,13 @@ public class Usuario {
         this.password = password;
     }
 
-    public RolUsuario getRol() {
-        return rol;
-    }
-
-    public void setRol(RolUsuario rol) {
-        this.rol = rol;
-    }
+//    public RolUsuario getRol() {
+//        return rol;
+//    }
+//
+//    public void setRol(RolUsuario rol) {
+//        this.rol = rol;
+//    }
 
     public Date getFechaAlta() {
         return fechaAlta;
