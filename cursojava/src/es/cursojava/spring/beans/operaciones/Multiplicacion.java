@@ -2,7 +2,7 @@ package es.cursojava.spring.beans.operaciones;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("multiplicacion")
 public class Multiplicacion implements Operacion {
 
     @Override

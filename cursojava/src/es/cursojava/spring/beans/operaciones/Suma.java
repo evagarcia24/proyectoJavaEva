@@ -2,7 +2,7 @@ package es.cursojava.spring.beans.operaciones;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("suma")
 public class Suma implements Operacion {
 
     @Override

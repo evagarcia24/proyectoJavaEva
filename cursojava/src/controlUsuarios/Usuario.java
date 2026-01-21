@@ -3,6 +3,7 @@ package controlUsuarios;
 import java.util.Date;
 import java.util.List;
 
+import es.cursojava.spring.beans.operaciones.Rol;
 //import es.juego.dominio.criatura.Criatura;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -55,7 +56,7 @@ public class Usuario {
 
     
     // Constructor sobrecargado
-        public Usuario() {
+        public Usuario(String string, Rol admin) {
     	
 	}
     

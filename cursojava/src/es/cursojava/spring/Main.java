@@ -1,29 +1,15 @@
 package es.cursojava.spring;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import es.cursojava.spring.beans.AlumnoSpring;
-import es.cursojava.spring.beans.AulaService;
-import es.cursojava.spring.beans.AulaService2;
-import es.cursojava.spring.services.CalculadoraService;
 
 public class Main {
 	
-    AnnotationConfigApplicationContext context =
-            new AnnotationConfigApplicationContext(AppConfig.class);
-
-    CalculadoraService calculadora = context.getBean(CalculadoraService.class);
-
-    System.out.println("5 + 3 = " + calculadora.calcular("+", 5, 3));
-    System.out.println("10 - 4 = " + calculadora.calcular("-", 10, 4));
-    System.out.println("6 * 7 = " + calculadora.calcular("*", 6, 7));
-    System.out.println("20 / 5 = " + calculadora.calcular("/", 20, 5));
-
-    context.close();
-    
+	public static void main(String[] args) {
+		
 
 
-//	public static void main(String[] args) {
+
 //		try (var ctx = new AnnotationConfigApplicationContext(AppConfig.class)) {
 //			System.out.println("Empezamos la aplicacion Spring");
 //			var a1 = ctx.getBean(es.cursojava.spring.beans.SingletonBean.class);
@@ -69,3 +55,4 @@ public class Main {
 //			aula2.mostrarAlumnos();
 
 		}
+}

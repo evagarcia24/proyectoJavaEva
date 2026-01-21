@@ -1,24 +1,28 @@
-package es.cursojava.spring.services;
+package es.cursojava.spring.beans.operaciones;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import es.cursojava.spring.beans.operaciones.Operacion;
 
 @Service
+
 public class CalculadoraService {
 
-    private final Map<String, Operacion> operaciones;
+    private Map<String, Operacion> operaciones = new HashMap<>();
 
-    public CalculadoraService(List<Operacion> operaciones) {
-        this.operaciones = operaciones.stream()
-                .collect(Collectors.toMap(Operacion::getSimbolo, op -> op));
+    public CalculadoraService(List<Operacion> operacionesList) {
+
+        for (Operacion op : operacionesList) {
+            operaciones.put(op.getSimbolo(), op);
+        }
     }
 
+    @SoloAdmin
     public double calcular(double a, double b, String simbolo) {
+
         Operacion operacion = operaciones.get(simbolo);
 
         if (operacion == null) {
@@ -28,3 +32,5 @@ public class CalculadoraService {
         return operacion.calcular(a, b);
     }
 }
+
+
